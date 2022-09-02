@@ -15,5 +15,4 @@ double result = Math.Sqrt(Math.Pow((xa-xb), 2) +
  Math.Pow((ya-yb), 2) + 
  Math.Pow((za-zb), 2));
 
-Console.WriteLine("Расстояние: ");
-Console.Write(result);
+Console.WriteLine($"Расстояние: {result}");
