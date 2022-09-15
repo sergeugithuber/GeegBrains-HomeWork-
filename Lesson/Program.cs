@@ -242,19 +242,126 @@
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void FillArray(int[,] matrix)
-{
-   for (int i = 0; i < matrix.GetLength(0); i++)
-   {
-      for (int j = 0; j < matrix.GetLength(1); j++)
-      {
-         matrix[i, j] = new Random().Next(1, 10);
-         Console.Write($"{matrix[i, j]} ");
-      }
-      Console.WriteLine();
-   }
-}
-int a = Convert.ToInt32(Console.ReadLine());
-int b = Convert.ToInt32(Console.ReadLine());
-int[,] MTA = new int[a, b];
-FillArray(MTA);
+// void FillArray(int[,] matrix)
+// {
+//    for (int i = 0; i < matrix.GetLength(0); i++)
+//    {
+//       for (int j = 0; j < matrix.GetLength(1); j++)
+//       {
+//          matrix[i, j] = new Random().Next(1, 10);
+//          Console.Write($"{matrix[i, j]} ");
+//       }
+//       Console.WriteLine();
+//    }
+// }
+// int a = Convert.ToInt32(Console.ReadLine());
+// int b = Convert.ToInt32(Console.ReadLine());
+// int[,] MTA = new int[a, b];
+// FillArray(MTA);
+
+////////////////////////////////////////////////////////////////////////////////////
+
+// int[,] FillArray (int m, int n)
+//             {
+//                 int[,] array = new int[m,n];
+//                 for (int i=0;i<m;i++)
+//                     {
+//                         for (int j=0;j<n;j++)
+//                             array[i,j] = new Random().Next(1,100);
+//                     }
+//                 return array;
+//             }
+//         Console.Write ("Введите количество строк двумерного массива ");
+//         int m = Convert.ToInt32 (Console.ReadLine());
+//         Console.Write ("Введите количество стобцов двумерного массива ");
+//         int n = Convert.ToInt32 (Console.ReadLine());       
+//         int[,] mas = FillArray(m,n);
+
+// void PrintArray(int[,] table)
+//             {
+//             for (int i = 0; i < table.GetLength(0); i++)
+//                 {
+//                     for (int j = 0; j < table.GetLength(1); j++)
+//                         {
+//                             Console.Write(table[i,j] + "\t" );
+//                         }
+//                     Console.WriteLine();
+//                 }
+//             }
+// int[,] FillArray (int m, int n)
+//             {
+//                 int[,] array = new int[m,n];
+//                 for (int i=0;i<m;i++)
+//                     {
+//                         for (int j=0;j<n;j++)
+//                             array[i,j] = new Random().Next(1,100);
+//                     }
+//                 return array;
+//             }
+//         Console.Write ("Введите количество строк двумерного массива ");
+//         int m = Convert.ToInt32 (Console.ReadLine());
+//         Console.Write ("Введите количество стобцов двумерного массива ");
+//         int n = Convert.ToInt32 (Console.ReadLine());       
+//         int[,] mas = FillArray(m,n);
+//         PrintArray(mas);
+// int[] mas2=new int[10];
+// for (int z=0; z<10;z++)
+// {
+//     int count=0;
+//     for (int i=0; i<m;i++)
+//     {
+//         for (int j=0; j<n; j++)
+//         {
+//             if (mas[i,j]==z) count++;
+//         }
+//     }
+//   mas2[z]=count;
+// }
+// for (int i=0; i<10; i++)
+// {
+//     if (mas2[i]!=0) Console.WriteLine($"{i} встречается {mas2[i]} раз(а) ");
+
+// }
+// int[] mas3=new int[10];
+//     for (int i=0; i<m;i++)
+//     {
+//         for (int j=0; j<n; j++)
+//         {
+//             mas2[mas[i,j]]++;
+//         }
+//     }
+
+// for (int i=0; i<10; i++)
+// {
+//     if (mas2[i]!=0) Console.WriteLine($"{i} встречается {mas2[i]} раз(а) ");
+
+// }
+// Console.Write("Введите кол-во столбцов: ");
+// int m = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите кол-во чисел в строке: ");
+// int n = Convert.ToInt32(Console.ReadLine());
+// int[,] mat = new int[m, n];
+// for (int i = 0; i < mat.GetLength(0); i++)
+// {
+//     for (int j = 0; j < mat.GetLength(1); j++) 
+//     {
+//       mat[i, j] = new Random().Next(0, 100);
+//       if (mat[i,j] > 9) Console.Write($"{mat[i, j]} ");
+//       else Console.Write($"<{mat[i, j]}> ");
+//    }
+//    Console.WriteLine();
+// }
+
+// int[,] mat = new int[4, 4];
+// int num = 1;
+// for (int i = 0; i < mat.GetLength(0); i++)
+// {
+//     if (i == 3)
+//     for (int j = 0; j < mat.GetLength(1); j++) 
+//     {
+//       mat[i, j] = num++;
+//       Console.Write($" {mat[i, j]} ");
+      
+//    }
+//     Console.WriteLine();
+// }
