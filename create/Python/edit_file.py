@@ -44,7 +44,33 @@
 # print(m, "min")
 # print(duration, "sec")
 
-from datetime import datetime 
-now = datetime.now() 
-current_time = now.strftime("%H:%M:%S") 
-print("Current Time =", current_time)
+# from datetime import datetime 
+# now = datetime.now() 
+# current_time = now.strftime("%H:%M:%S") 
+# print("Current Time =", current_time)
+
+# создание несуществующего файла
+# from fileinput import close
+
+
+# countries = ['Russia', 'USA', 'China', 'France']
+# data = open('file.txt', 'w')
+# data.writelines(countries)
+# data.write("\nHello There")
+# data.close()
+
+
+
+
+# with open('file.txt', 'w') as data:
+#    data.writelines(countries)
+#    data.write('\nCLOSE')
+
+# path = 'file.txt'
+# data = open('file.txt', 'r')
+# for i in data:
+#    print(i)
+# data.close
+
+import Job
+print(Job.f('a'))
