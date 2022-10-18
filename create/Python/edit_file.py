@@ -72,5 +72,19 @@
 #    print(i)
 # data.close
 
-import Job
-print(Job.f('a'))
+# import Job
+# print(Job.f('a'))
+
+# n = int(input("Ввод: "))
+# with open('file.txt', 'w') as f:
+#    f.write(n)
+
+my_list = [1.1, 1.2, 3.1, 5, 10.01]
+min = 1
+max = 0
+for i in my_list:
+    if (i - int(i)) <= min:
+        min = i - int(i)
+    if (i - int(i)) >= max:
+        max = i - int(i)  
+print(max-min)
