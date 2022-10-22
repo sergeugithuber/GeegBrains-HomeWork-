@@ -79,12 +79,90 @@
 # with open('file.txt', 'w') as f:
 #    f.write(n)
 
-my_list = [1.1, 1.2, 3.1, 5, 10.01]
-min = 1
-max = 0
-for i in my_list:
-    if (i - int(i)) <= min:
-        min = i - int(i)
-    if (i - int(i)) >= max:
-        max = i - int(i)  
-print(max-min)
+# my_list = [1.1, 1.2, 3.1, 5, 10.01]
+# min = 1
+# max = 0
+# for i in my_list:
+#     if (i - int(i)) <= min:
+#         min = i - int(i)
+#     if (i - int(i)) >= max:
+#         max = i - int(i)  
+# print(max-min)
+
+# new_list = []
+# n = int(input("Ввод: "))
+# for i in range(1, n +1):
+#     new_list.append(input(f'{i}: '))
+# print(new_list)
+
+# a = int(input("1 : "))
+# b = int(input("2 :"))
+# max = a
+# if a > b:
+#     max = a
+# result = 0
+# for i in range(1, max):
+#     if a % i == 0 and b % i == 0:
+#         result = i
+# print(r
+
+# sum = 0
+# for i in range(3, 13):
+#     sum += i
+# print(sum)
+
+# count = 0
+# for a in range(1, 100):
+#     for b in range(1, 100):
+#         for c in range(1, 100):
+#             if max(a,b) * max(c, 13) == min(a,c) * min(b, 26):
+#                 count += 1
+#                 print(a, b, c)
+# print(count)
+# sum = 0
+# for i in range(1, 21):
+#     sum =+ (i ** 2)
+# sum_exe = sum / 2
+# summ = 0
+# for i in range(1 , 210):
+#     summ =+ (i ** 2)
+#     if summ > 21840:
+#         print(i)
+#         break
+##############################################################################
+# sum = lambda x, y: x + y
+# print(sum, 1, 2)
+# def mult(x, y):
+#     return x * y
+# def calc(op, a, b):
+#     print(op(a, b))
+# calc(sum, 4, 5)
+
+# list = [i for i in range(1, 21)]
+# list = [i for i in range(1, 21) if i % 3 == 0] # С Условием
+# list = [(i, i) for i in range(1, 21)] # Кортеджи
+# def f(x):
+#     return x**2 
+# list = [(i, f(i)) for i in range(1, 21)] # Преминение функции
+# print(list)
+
+# def select(f, col):
+#     return [f(x) for x in col] 
+# data = '1 2 4 5 3 6 2 5 3'.split() # На заметку
+# res = select(int, data)
+# print(res)
+
+# li = [x for x in range(1, 21)]
+# li = list(map(lambda x: x % 2, li)) # Как я понял map это работа со списком
+# print(li)
+
+# data = list(map(int, input().split()))
+# print(data)
+
+list1 = ["zero?", "two", "three", "four", "five"]
+list2 = [0, 2, 3, 4, 5]
+list3 = ["HDD", "SSD", "SSHD"]
+data = list(zip(list1, list2, list3)) # ZIP условноый кортедж
+print(data)
+data = list(enumerate(list1)) # Нумерация элементов с 0, условный массив (кортедж)
+print(data)
