@@ -159,10 +159,28 @@
 # data = list(map(int, input().split()))
 # print(data)
 
-list1 = ["zero?", "two", "three", "four", "five"]
-list2 = [0, 2, 3, 4, 5]
-list3 = ["HDD", "SSD", "SSHD"]
-data = list(zip(list1, list2, list3)) # ZIP условноый кортедж
-print(data)
-data = list(enumerate(list1)) # Нумерация элементов с 0, условный массив (кортедж)
-print(data)
+# list1 = ["zero?", "two", "three", "four", "five"]
+# list2 = [0, 2, 3, 4, 5]
+# list3 = ["HDD", "SSD", "SSHD"]
+# data = list(zip(list1, list2, list3)) # ZIP условноый кортедж
+# print(data)
+# data = list(enumerate(list1)) # Нумерация элементов с 0, условный массив (кортедж)
+# print(data)
+
+
+# def RLE():
+#    word = str(input("Ввод: "))
+#    for i in word:
+#       print(word)
+# def lol():
+#    print("Hello!")
+
+# if __name__ == "__main__": # Работает как независимая программа
+#    RLE() 
+
+def calc(x):
+   return x**2
+def math(f, x):
+   print(f(x))
+
+math(calc, 10)

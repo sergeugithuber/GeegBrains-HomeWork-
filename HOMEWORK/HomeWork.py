@@ -1,60 +1,33 @@
-# Вычислить число c заданной точностью d
-# Пример:
-# - при $d = 0.001, π = 3.141.$    $10^{-1} ≤ d ≤10^{-10}$
-# =============================================================
-# from math import pi
-# d = int(input("Ввод: "))
-# print(f'Вывод: {round(pi, d)}')
-# =============================================================
-
-# Задайте натуральное число N. Напишите программу, 
-# которая составит список простых множителей числа N.
-# =============================================================
-# n = int(input("Ввод: "))
-# list = []
-# for i in range(2, n + 1):
-#    if n % i == 0:
-#       for j in (range(2, i//2 +1)):
-#          if i % j == 0:
-#             break
-#       else:
-#          list.append(i)
-# print(f'Вывод: {list}')
-# =============================================================
-
-# Задайте последовательность чисел. 
-# Напишите программу, которая выведет список 
-# неповторяющихся элементов исходной последовательности.
-# =============================================================
-# numbers = list(map(int, input("Ввод (через пробел):\n").split()))
-# result = []
-# for i in numbers:
-#    if numbers.count(i) == 1: # Подчёт чисел и сравнение
-#       result.append(i)
-# print(f'Вывод: {result}')
-# =============================================================
-
-# Задана натуральная степень k. Сформировать случайным образом список 
-# коэффициентов (значения от 0 до 100) многочлена и записать в файл многочлен степени k.
-# Пример:
-# - k=2 => 2*x² + 4*x + 5 = 0 или x² + 5 = 0 или 10*x² = 0
-#==========================================================
-from random import randint
-k = randint(2, 3)
-list = [randint(0, 101) for i in range(k + 1)]
-m = len(list)
-list_num = []
-for i in range(k+1):
-   if i == k:
-      list_num.append(f'{list[i]} = 0')
-      break
-   if m == 1:
-      list_num.append(f'{list[i]}x + ')
+#Напишите программу, удаляющую из текста все слова, содержащие ""абв"".
+#====================================
+# text = input("Ввод (через пробел):\n")
+# def delete_abc(data):
+#    data = data.split()
+#    result = ""
+#    for i in data:
+#       if "абв" not in i:
+#          result += i + " "
+#    return result
+# print(delete_abc(text))
+#====================================
+# Реализуйте RLE алгоритм: реализуйте модуль сжатия и восстановления данных.
+#==============================
+def RLE(data):
+   count = 1
+   result = ''
+   prev_char = ''
+   if not data: return ''
+   for char in data:
+      if char != prev_char:
+         if prev_char:
+            result += f'{count}{prev_char}'
+         count = 1
+         prev_char = char
+      else:
+         count += 1
    else:
-      list_num.append(f'{list[i]}x^{m-1} + ')
-      m -= 1
-result = ''.join(list_num)
-print(result)
-with open ('file.txt', 'w', encoding='utf-8') as data:
-   data.write(result)
-#=========================================================
+      result += f'{count}{prev_char}'
+      return result
+text = input("Input: ")
+data_input = RLE(text)
+print(f'Conclusion: {data_input}')
