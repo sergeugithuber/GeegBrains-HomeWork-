@@ -1,48 +1,33 @@
-# Реализуйте классы MinStat, MaxStat, AverageStat, которые будут находить минимум, максимум и среднее арифметическое последовательности целых чисел.
-# Экземпляры классов инициализируются без аргументов. Метод add_number должен добавлять в статистику число, 
-# которое будет учтено при вычислении финального результата методом result. Для экземпляров MinStat и MaxStat result должен возвращать целое число, 
-# для AverageStat — число типа float (это число будет сравниваться с правильным ответом до седьмой значащей цифры).
-# Если в последовательности отсутствуют числа и статистические величины вычислить невозможно, метод result должен возвращать None.
+import telebot
+from telebot import types
+token = "5519358073:AAE3d9PaqhK1AdoTeZMwrDkS0V7AoKtWLMU"
 
-class AverageStat:
-    list =[]
+bot = telebot.TeleBot(token)
 
-    def add_number(self, number):
-        self.list.append(number)
+@bot.message_handler(commands=["start"])
+def message_start(message):
+   bot.send_message(message.from_user.id, "Привет!")
 
-    def _print_list(self):
-        print(self.list)
+name = ''
+password = ''
+@bot.message_handler(commands=["reg"])
+def reg_message(message):
+   global name
+   bot.send_message(message.from_user.id, "Как тебя зовут?")
+   name = message.text
+   bot.register_next_step_handler(message, password_message)
 
-    def reset(self):
-        self.list = []
+def password_message(message):
+   global password
+   bot.send_message(message.from_user.id, "Введи пароль:")
+   password = message.text
 
-    def result(self):
-        sum = 0 
-        for i in self.list:
-            sum += i
-        return sum / len(self.list)
+@bot.message_handler(commands=["help"])
+def help_message(message):
+   bot.send_message(message.from_user.id, "  Commands:\n/start\n/reg\n/help\n/my_name")
 
+@bot.message_handler(commands=["my_name"])
+def print_name_password_message(message):
+   bot.send_message(message.from_user.id, name)
 
-class MaxStat(AverageStat):
-    def result(self):
-        list_sort = sorted(self.list)
-        return list_sort[-1]
-
-
-class MinStat(AverageStat):
-    def result(self):
-        list_sort = sorted(self.list)
-        return list_sort[0]
-
-a = AverageStat()
-b = MaxStat()
-c = MinStat()
-a.add_number(3)
-a.add_number(-2)
-a.add_number(10)
-a.add_number(7)
-a.add_number(5)
-a.add_number(3)
-print(b.result())
-print(c.result())
-print(a.result())
+bot.infinity_polling()
