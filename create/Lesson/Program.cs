@@ -321,7 +321,7 @@
 // {
 //     if (mas2[i]!=0) Console.WriteLine($"{i} встречается {mas2[i]} раз(а) ");
 
-// }
+// // }
 // int[] mas3=new int[10];
 //     for (int i=0; i<m;i++)
 //     {

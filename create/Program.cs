@@ -131,4 +131,4 @@
 //    }
 // }
 
-Console.WriteLine("Всё окей!");
+// Console.WriteLine("Всё окей!");
