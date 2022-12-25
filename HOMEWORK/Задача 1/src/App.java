@@ -1,54 +1,40 @@
+import java.util.ArrayList;
+
 public class App {
     public static void main(String[] args) throws Exception {
-        String text1 = mergeAlternately("abc", "pqr");
-        String text2 = mergeAlternately("ab", "pqrs");
-        String text3 = mergeAlternately("abcd", "pq");
-        System.out.println(text1);
-        System.out.println(text2);
-        System.out.println(text3);
+        ArrayList<Integer> a = new ArrayList<>();
+        a.add(4);
+        a.add(2);
+        a.add(3);
+        ArrayList<Integer> b = new ArrayList<>();
+        b.add(1);
+        b.add(2);
+        b.add(3);
+        if (Check(a, b)) { //Input: a = [4, 2, 3] b = [1, 2, 3]
+            System.out.println("True");
+        } else {
+            System.out.println("False");
+        }  // Выполнение кода
     }
-
-    static String mergeAlternately(String word1, String word2) {
-        String res = "";
-        int max = 0; //Макс. длинное слово
-        int start = 0; //старт с макс.длинн числа
-        String max_word = "";
-
-        if (word1.length() > word2.length()){
-            max = word1.length();
-            max_word = word1;
-            start = 1;
-        }
-        else if (word1.length() == word2.length()) {
-            max = word1.length();
-            max_word = word1;
-            start = 1;
-        }
-        else {
-            max = word2.length();
-            max_word = word2;
-            start = 2;
-        }
-
-        for (int i = 0; i < max; i++ ){
-            if (start == 1){
-                if (i >= word2.length()){
-                    res = res + word1.charAt(i);
-                }
-                else{
-                    res = res + word1.charAt(i) + word2.charAt(i);
-                }
-
-            }
-            if (start == 2){
-                if (i >= word1.length()){
-                    res = res + word2.charAt(i);
-                }
-                else{
-                    res = res + word1.charAt(i) + word2.charAt(i);
+    
+    static boolean Check(ArrayList<Integer> a, ArrayList<Integer> b) { //Метод
+        // На вход приходят два ArrayList<Integer> напишите метод, 
+        //который проверяет два массива на равенство. Нужно реализовать алгоритм, НЕ использовать метод equals.
+        boolean check = false;
+        if (a.size() == b.size()) {
+            check = true;
+            for (int i = 0; i < a.size(); i++) {
+                if (a.get(i) != b.get(i)) {
+                    check = false;
+                    i = a.size(); //Break
                 }
             }
         }
-        return res;
+        return check;
     }
 }
+
+
+
+
+
