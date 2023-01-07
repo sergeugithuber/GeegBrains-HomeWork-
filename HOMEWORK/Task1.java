@@ -1,49 +1,38 @@
 package HOMEWORK;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Deque;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.Set;
+import java.util.HashMap;
+import java.util.Map;
 
-public class Task1{
-   
-public static void main(String[] args) throws Exception {
-     String path = "////home//self//..//.//sda/sdds/sdf///sdf";
-     System.out.println(simplifyPath(path));
-   }
+public class Task1 {
+    public static void main(String[] args) {
+        String[] words1 = {"leetcode","is","amazing","as","is"};
+        String[] words2 = {"amazing","leetcode","is"};
+        System.out.println(findCount(words1, words2));
+    }
     
-   static String simplifyPath(String path) {
-      if (path == "") return "/";
-      
-      Deque<String> stack = new LinkedList<>();
-      Set<String> skip = new HashSet<>(Arrays.asList("..", ".", ""));
-      String result = "";
+    static int findCount(String[] words1 , String[] words2){
+        int count = 0;
+        Map<String, Integer> map = new HashMap<>();
+        Map<String, Integer> map2 = new HashMap<>();
 
-      for (String dir : path.split("/")) {
-         if (dir.equals("..") && !stack.isEmpty()){
-            stack.pop();
-         } else if (!skip.contains(dir)) {
-            stack.push(dir);
-         }
-      }
+        for (String str : words1) {
+            map.putIfAbsent(str, 0);
+            map.put(str, map.get(str) + 1);
+        }
 
-      for (String dir : stack) {
-         result = "/" + dir + result;
-      }
+        for (String str : words2) {
+            map2.putIfAbsent(str, 0);
+            map2.put(str, map2.get(str) + 1);
+        }
 
-      return result;
-   }
+        for (String str : words1) {
+            if (map2.containsKey(str)) {
+                if (map.get(str) == 1 && map2.get(str) == 1) {
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
 }
-
-
-
-
-
-
-
-
-
 
