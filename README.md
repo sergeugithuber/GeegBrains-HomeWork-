@@ -1,1 +1,1 @@
-# Путь к коду ДЗ: HOMEWORK/Задача №/scr
+# Путь к коду ДЗ: HOMEWORK/Tree/scr
