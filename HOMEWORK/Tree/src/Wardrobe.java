@@ -1,3 +1,5 @@
+import People.Human;
+
 public class Wardrobe extends Object{
    private String condition = "Закрыт";
 
